@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :atendidos
   resources :agencias
   resources :atenciones do 
     member do 
