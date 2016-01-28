@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :usuarios
+  get 'home/index'
+
   resources :atendidos
   resources :agencias
   resources :atenciones do 
@@ -13,6 +16,9 @@ Rails.application.routes.draw do
       get 'atender'
     end
   end
+
+  root 'home#index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
