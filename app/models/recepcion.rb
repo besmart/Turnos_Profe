@@ -9,8 +9,9 @@ class Recepcion < Turno
 		self.hora_ingreso = Time.now
 	end
 
-	def to_atencion
+	def to_atencion(current_usuario)
 		atencion = self.becomes!(Atencion)
+		atencion.usuario_atencion = current_usuario
 		atencion.hora_atencion = Time.now
 		atencion.save(validate: false) # atencion.save! devuelve el error, sin el ! devuelve true o false
 	end

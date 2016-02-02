@@ -5,7 +5,8 @@ class RecepcionesController < ApplicationController
   # GET /recepciones
   # GET /recepciones.json
   def index
-    @recepciones = Recepcion.all
+    @recepciones = Recepcion.where(agencia_id: current_usuario.agencia_id)
+
   end
 
   # GET /recepciones/1
@@ -23,7 +24,7 @@ class RecepcionesController < ApplicationController
   end
 
   def atender
-    @recepcion.to_atencion
+    @recepcion.to_atencion(current_usuario)
     redirect_to edit_atencion_path(@recepcion)
   end
 
@@ -31,6 +32,8 @@ class RecepcionesController < ApplicationController
   # POST /recepciones.json
   def create
     @recepcion = Recepcion.new(recepcion_params)
+    @recepcion.usuario_ingreso = current_usuario # Usuario que esta login in
+    @recepcion.agencia = current_usuario.agencia
 
     respond_to do |format|
       if @recepcion.save

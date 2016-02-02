@@ -21,9 +21,9 @@
         <td><%= agencia.telefono %></td>
         <td><%= agencia.zona %></td>
         <td><%= agencia.numero %></td>
-        <td><%= link_to 'Show', agencia %></td>
-        <td><%= link_to 'Edit', edit_agencia_path(agencia) %></td>
-        <td><%= link_to 'Destroy', agencia, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', agencia %></td>
+        <td><%= link_to 'Editar', edit_agencia_path(agencia) %></td>
+        <td><%= link_to 'Eliminar', agencia, method: :delete, data: { confirm: 'Está seguro de eliminar el registro ?' } %></td>
       </tr>
     <% end %>
   </tbody>

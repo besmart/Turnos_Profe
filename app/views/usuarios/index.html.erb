@@ -22,16 +22,16 @@
       <tr>
         <td><%= usuario.nombre %></td>
         <td><%= usuario.apellido %></td>
-        <td><%= usuario.agencia %></td>
+        <td><%= usuario.agencia.try(:nombre) %></td>
         <td><%= usuario.rol %></td>
         <td><%= usuario.estado %></td>
         <td><%= usuario.codigo %></td>
-        <td><%= usuario.correo %></td>
+        <td><%= usuario.email %></td>
         <td><%= usuario.login %></td>
         <td><%= usuario.cedula %></td>
-        <td><%= link_to 'Show', usuario %></td>
-        <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
-        <td><%= link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', usuario %></td>
+        <td><%= link_to 'Editar', edit_usuario_path(usuario) %></td>
+        <td><%= link_to 'Eliminar', usuario, method: :delete, data: { confirm: 'Está seguro de eliminar el registro ?' } %></td>
       </tr>
     <% end %>
   </tbody>

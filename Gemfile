@@ -30,6 +30,9 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'bootstrap-sass'
 gem 'devise'
+#Gráficos
+gem 'morrisjs-rails'
+gem 'raphael-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

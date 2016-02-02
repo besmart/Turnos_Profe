@@ -22,9 +22,9 @@
   <tbody>
     <% @turnos.each do |turno| %>
       <tr>
-        <td><%= turno.usuario_ingreso_id %></td>
-        <td><%= turno.usuario_atencion_id %></td>
-        <td><%= turno.agencia %></td>
+        <td><%= turno.usuario_ingreso.try(:nombre) %></td>
+        <td><%= turno.usuario_atencion.try(:nombre) %></td>
+        <td><%= turno.agencia.try(:nombre) %></td>
         <td><%= turno.nombres %></td>
         <td><%= turno.asunto %></td>
         <td><%= turno.descripcion %></td>
@@ -32,15 +32,11 @@
         <td><%= turno.hora_atencion %></td>
         <td><%= turno.hora_finalizacion %></td>
         <td><%= turno.comentario %></td>
-        <td><%= turno.estado %></td>
-        <td><%= link_to 'Show', turno %></td>
-        <td><%= link_to 'Edit', edit_turno_path(turno) %></td>
-        <td><%= link_to 'Destroy', turno, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= turno.type %></td>
+        <td><%= link_to 'Mostrar', turno_path(turno) %></td>
+    
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Turno', new_turno_path %>
