@@ -33,6 +33,8 @@ gem 'devise'
 #Gráficos
 gem 'morrisjs-rails'
 gem 'raphael-rails'
+#PDF
+gem 'wicked_pdf'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

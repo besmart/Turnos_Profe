@@ -1,5 +1,8 @@
 class DashboardController < ApplicationController
+  before_action :authenticate_usuario!
+  
   def index
+    
   end
 
   def distribucion_agencia

@@ -30,7 +30,7 @@ $(document).on('page:change', function(){
 	});		
 
 	$.getJSON('/dashboard/promedio_atencion.json', function(data){
-		Morris.Line({
+		Morris.Bar({
 
 			element: 'promedio-atencion',
 			data: data,

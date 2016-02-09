@@ -9,11 +9,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Turnero  </a>
+       <%=link_to image_tag('logo_nuevo.jpg', class: 'img-responsive'), root_path %>
+         
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <% if usuario_signed_in?%>  
           <ul class="nav navbar-nav">
             <li class="active"><%= link_to 'Recepción', new_recepcion_path %></li>
             <li><%= link_to 'Sala de espera', recepciones_path%> </li>
@@ -24,14 +26,14 @@
                 <li><%= link_to 'Usuarios', usuarios_path %></li>
                 <li><%= link_to 'Turnos', turnos_path %></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+                <li><a href="#"><%=link_to 'Estadisticas de atención', dashboard_path%></a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
           </ul>
-
-          <ul class="nav navbar-nav navbar-right">
+        <% end %>
+        <ul class="nav navbar-nav navbar-right">
             <% if usuario_signed_in? %>
               <li>
                 <p class="navbar-righttext"> 
