@@ -42,7 +42,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = {host: 'localhost:3000'}
 
-# correo de mandrila
+# correo de mandril
 
   config.action_mailer.smtp_settings = {
     address: 'smtp.mandrillapp.com',

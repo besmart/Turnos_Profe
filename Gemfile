@@ -27,7 +27,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 # Busquedas
 gem 'ransack'
-
+gem 'sidekiq'
+gem 'sinatra'
+gem 'puma'
+	
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'bootstrap-sass'
