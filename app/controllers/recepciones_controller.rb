@@ -6,6 +6,12 @@ class RecepcionesController < ApplicationController
   # GET /recepciones.json
   def index
     @recepciones = Recepcion.where(agencia_id: current_usuario.agencia_id)
+    respond_to do |format|
+      format.html
+      format.pdf do 
+        render pdf: 'Listado de Recepciones'
+      end   
+    end
 
   end
 

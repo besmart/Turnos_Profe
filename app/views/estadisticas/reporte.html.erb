@@ -1,0 +1,47 @@
+<h1>Estadísticas - Reporte</h1>
+
+<p>
+  Reporte de atención del día <%= l(Date.today) %>
+</p>
+
+<h4>Pormedio por agencia</h4>
+<table>
+    <tr>
+        <th>Agencia</th>
+        <th>Promedio de Espera</th>
+        <th>Promedio de Atención</th>
+        <th>Total Agencia</th>
+    </tr>
+    <% @promedio_agencia.each do |agencia| %>
+    <tr>
+        <td><%= agencia[:agencia].try(:nombre) %></td>
+        <td><%= agencia[:promedio_espera] %></td>
+        <td><%= agencia[:promedio_atencion] %></td>
+        <td><%= agencia[:count] %></td>
+    </tr>
+    <% end %>
+</table>
+
+<h4>Pormedio usuarios</h4>
+<table>
+    <tr>
+        <th>Usuario</th>    
+        <th>Promedio Usuario</th>  
+        <th>Totales Usuarios</th>
+    </tr>
+    <% @promedio_usuario.each do |usuario| %>
+    <tr>
+        <td><%= usuario[:usuario].try(:nombre) %></td>
+        <td><%= usuario[:promedio] %></td>
+        <td><%= usuario[:count] %></td>
+      
+    </tr>
+    <% end %>
+</table>
+
+<h4>Pormedio Espera</h4>
+<h1> <%= @promedio_espera %> </h1>
+   
+<h4>Pormedio atención</h4>
+<h1> <%= @promedio_atencion%> </h1>
+   

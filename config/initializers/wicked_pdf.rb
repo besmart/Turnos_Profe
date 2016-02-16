@@ -19,9 +19,19 @@ WickedPdf.config = {
   # (but can be overridden in `render :pdf` calls)
   layout: 'application.pdf', 	
   orientation: 'landscape',
+  disposition: 'attachment', # lleva a la descarga
   footer: {
   		center: '[page] of [topage]',
   		left: 'Administración de turnos'
 
-  }
+  },
+  header: {
+      html: {
+          template: 'shared/header.pdf.erb'
+      },
+      spacing: 20,
+   },
+   margin: {
+        top: 40
+   }
 }

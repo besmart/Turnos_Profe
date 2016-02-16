@@ -38,6 +38,22 @@ Rails.application.configure do
   # este link tiene la url donde debe llegar
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+#  config.action_mailer.delivery_method = :letter_opener # este se comenta para que opere el correo en mandril
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = {host: 'localhost:3000'}
+
+# correo de mandrila
+
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mandrillapp.com',
+    port: 587, # Port 587 and 2525
+    enable_start_auto: true,
+    user_name: 'rderoldan1@gmail.com',
+    password: '_WVMN515REzI8qF4Wuj85A',
+    authentication: 'login',
+    host: 'localhost:3000'
+}
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

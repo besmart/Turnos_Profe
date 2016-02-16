@@ -5,7 +5,15 @@ class AgenciasController < ApplicationController
   # GET /agencias
   # GET /agencias.json
   def index
-    @agencias = Agencia.all
+    @q = Agencia.ransack(params[:q])
+    @agencias = @q.result
+
+    respond_to do |format|
+      format.html
+      format.pdf do 
+        render pdf: 'Listado de Agencias'
+      end   
+    end
   end
 
   # GET /agencias/1
